@@ -8,9 +8,7 @@ describe('Activating a MarfeelPress', function() {
 		});
 
 		cy.generateSite().then((payload) => {
-
 			url = payload.url;
-
 			cy.visit(payload.urlWithPass, {
 					onBeforeLoad: (win) => {
 					win.onerror = null
@@ -56,7 +54,6 @@ describe('Activating a MarfeelPress', function() {
 
 		cy.wait(2000);
 
-		// GO TO POST ONBOARDING
 		cy.visit(`${url}wp-admin/admin.php?page=onboarding`);
 		cy.get('.wizard-list');
 
@@ -67,14 +64,4 @@ describe('Activating a MarfeelPress', function() {
 		cy.get('script[data-mrf-script="garda"]');
 	});
 
-	after( () => {
-
-
-		/*cy.visit(`${url}/wp-admin/plugins.php`);
-
-		cy.get('tr[data-slug=marfeelpress] a.delete').click();*/
-
-		//TODO remove tenant from Insight!
-
-    } );
 })
