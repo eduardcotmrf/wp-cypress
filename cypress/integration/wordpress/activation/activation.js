@@ -52,7 +52,9 @@ describe('Activating a MarfeelPress', function() {
 		
 		cy.get('button.mrf-onboarding-panle__activate-button').click();
 
-		cy.wait(2000);
+		cy.wait(5000);
+
+		cy.get('button.mrf-onboarding-dfp__btn').click();
 
 		cy.visit(`${url}wp-admin/admin.php?page=onboarding`);
 		cy.get('.wizard-list');
